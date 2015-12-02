@@ -12,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import soshome.model.command.InterfaceCommand;
 
-
 public class RequestsHelper {
 
     private HttpServletRequest request;

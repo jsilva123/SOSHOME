@@ -110,8 +110,8 @@
             </div></form></div>
 </c:if><!-- /col-9 --> 
 
-    <!--Pedidos Respondidos, Cliente -->
-    <c:if test="${pedido.getStatus().equals('RESPONDIDO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
+<!--Pedidos Respondidos, Cliente -->
+<c:if test="${pedido.getStatus().equals('RESPONDIDO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
     <div class="padding">
         <form name="edit" action="ServletController" method="POST">
             <div class="full col-sm-9">
@@ -204,12 +204,12 @@
                             <td class="">Classifica&ccedil;&atilde;o M&eacute;dia</td>
                             <td class="">
                                 <c:if test="media > 0">
-                                <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="${media}"/>
+                                    <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="${media}"/>
                                 </c:if>
                                 <c:if test="media = 0">
                                     <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="Sem Classifica&ccedil;&atilde;o"/>
                                 </c:if>
-                                
+
                             </td>
                         </tr>
                     </table>
@@ -226,24 +226,24 @@
             <!--
             
             -->
-  <br/>
-</form><!-- /col-9 -->
+            <br/>
+        </form><!-- /col-9 -->
         <form name="edit" action="ServletController" method="POST">
             <input type="hidden" name="idPedido" value="${pedido.getIdpedido()}" />
             <input type="hidden" name="cmd" value="soshome.model.command.RefutePedidoServico" />
             <input type="submit" value="Recusar" class="btn btn-danger btn pull-right"/>
         </form>
-            <br/>
-        </form><!-- /col-9 -->
-        <form name="edit" action="ServletController" method="POST">
-            <input type="hidden" name="id" value="${pedido.getIdpedido()}" />
-            <input type="hidden" name="cmd" value="soshome.model.command.DeletePedidoServico" />
-            <input type="submit" value="Excluir" class="btn btn-danger btn pull-right"/>
-        </form> </div>
+        <br/>
+    </form><!-- /col-9 -->
+    <form name="edit" action="ServletController" method="POST">
+        <input type="hidden" name="id" value="${pedido.getIdpedido()}" />
+        <input type="hidden" name="cmd" value="soshome.model.command.DeletePedidoServico" />
+        <input type="submit" value="Excluir" class="btn btn-danger btn pull-right"/>
+    </form> </div>
 </div><!-- /padding --></c:if>
 
-    <!--Pedidos Aceitos, Cliente -->
-    <c:if test="${pedido.getStatus().equals('ACEITO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
+<!--Pedidos Aceitos, Cliente -->
+<c:if test="${pedido.getStatus().equals('ACEITO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
     <div class="padding">
         <form name="edit" action="ServletController" method="POST">
             <div class="full col-sm-9">
@@ -336,12 +336,12 @@
                             <td class="">Classificação Média</td>
                             <td class="">
                                 <c:if test="media > 0">
-                                <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="${media}"/>
+                                    <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="${media}"/>
                                 </c:if>
                                 <c:if test="media > 0">
                                     <input id="input-projeto-media" type="text" name="media" readonly="" disabled="" value="Sem Classifica&ccedil;&atilde;o"/>
                                 </c:if>
-                                
+
                             </td>
                         </tr>
                     </table>
@@ -367,9 +367,9 @@
 </div><!-- /padding --></c:if>
 
 
-    <!--Pedidos Agendados, Cliente -->
-    <c:if test="${pedido.getStatus().equals('CONFIRMADO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
-     <div class="padding">
+<!--Pedidos Agendados, Cliente -->
+<c:if test="${pedido.getStatus().equals('CONFIRMADO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
+    <div class="padding">
         <form name="edit" action="ServletController" method="POST">
             <div class="full col-sm-9">
                 <!-- content -->
@@ -477,8 +477,8 @@
 </form><!-- /col-9 -->
 </div><!-- /padding --></c:if>
 
-    <!--Pedidos Finalizados, Cliente -->
-    <c:if test="${pedido.getStatus().equals('FINALIZADO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
+<!--Pedidos Finalizados, Cliente -->
+<c:if test="${pedido.getStatus().equals('FINALIZADO') && pageContext.session.getAttribute('isCliente').equals('true')}">    <!--Pedidos Respondidos, Cliente -->
     <div class="padding">
         <form name="edit" action="ServletController" method="POST">
             <div class="full col-sm-9">
@@ -570,10 +570,10 @@
                         <tr class="">
                             <td class="">Nota</td>
                             <td class="">
-                                
+
                                 <input id="input-projeto-media" type="text" disabled="" readonly=" "name="nota" value="${pedido.getAvaliacao()}"/>
-                              
-                                
+
+
                             </td>
                         </tr>
                     </table>
@@ -590,9 +590,9 @@
             
             -->
 
-</form>
+        </form>
         <!-- /col-9 -->
-        </div>
+    </div>
 </div><!-- /padding --></c:if>
 
 
@@ -772,8 +772,8 @@
                             </td>
                         </tr>
                         </tr>
-                      
-                        
+
+
                     </table>
                 </div>
             </div><!--/row-->
@@ -785,13 +785,13 @@
             <input type="submit" value="Agendar" class="btn btn-primary btn pull-right"/>
     </div>
 </form>
-            
-              <form name="edit" action="ServletController" method="POST">
-            <input type="hidden" name="id" value="${pedido.getIdpedido()}" />
-            <input type="hidden" name="cmd" value="soshome.model.command.RefutePedidoServico" />
-            <input type="submit" value="Recusar" class="btn btn-danger btn pull-right"/>
-        </form>
-            <!-- /col-9 -->
+
+<form name="edit" action="ServletController" method="POST">
+    <input type="hidden" name="id" value="${pedido.getIdpedido()}" />
+    <input type="hidden" name="cmd" value="soshome.model.command.RefutePedidoServico" />
+    <input type="submit" value="Recusar" class="btn btn-danger btn pull-right"/>
+</form>
+<!-- /col-9 -->
 </div><!-- /padding -->
 </c:if>
 
@@ -871,7 +871,7 @@
                                 <input id="input-projeto-endereco" type="text" disabled=""  readonly="" name="endCli" value="${pedido.getIdcliente().getEndereco()}"/>
                             </td>
                         </tr>
-                         <tr class="">
+                        <tr class="">
                             <td class="">Telefone do Profissional</td>
                             <td class="">
                                 <input id="input-projeto-endereco" type="text" disabled=""  readonly="" name="endCli" value="${pedido.getIdcliente().getTelefone()}"/>
@@ -887,8 +887,8 @@
             <input type="hidden" name="cmd" value="soshome.model.command.ConfirmPedidoServicoProfissional" />
 
             <input type="submit" value="Agendar" class="btn btn-primary btn pull-right"/>
-            </form>
-            <form name="edit" action="ServletController" method="POST">
+        </form>
+        <form name="edit" action="ServletController" method="POST">
             <input type="hidden" name="idPedido" value="${pedido.getIdpedido()}" />
             <input type="hidden" name="cmd" value="soshome.model.command.RefutePedidoServico" />
             <input type="submit" value="Recusar" class="btn btn-danger btn pull-right"/>
@@ -901,7 +901,7 @@
 
 
 
-<!-- /col-9 -->
+    <!-- /col-9 -->
 </div><!-- /padding -->
 </c:if>
 
@@ -981,7 +981,7 @@
                                 <input id="input-projeto-endereco" type="text" disabled=""  readonly="" name="endCli" value="${pedido.getIdcliente().getEndereco()}"/>
                             </td>
                         </tr>
-                      
+
 
                     </table>
                 </div>
@@ -992,8 +992,8 @@
             <input type="hidden" name="cmd" value="soshome.model.command.ConfirmPedidoServicoProfissional" />
 
             <input type="submit" value="Agendar" class="btn btn-primary btn pull-right"/>
-            
-         
+
+
         </form>
     </div>
 
@@ -1085,7 +1085,7 @@
                                 <input id="input-projeto-endereco" type="text" disabled=""  readonly="" name="endCli" value="${pedido.getIdcliente().getEndereco()}"/>
                             </td>
                         </tr>
-                     
+
 
                     </table>
                 </div>
@@ -1096,8 +1096,8 @@
             <input type="hidden" name="cmd" value="soshome.model.command.LoadPedidosProfissional" />
 
             <input type="submit" value="Voltar" class="btn btn-primary btn pull-right"/>
-            
-            
+
+
         </form>
     </div>
 

@@ -40,7 +40,7 @@
 
 
                     <div class="panel-heading">
-                        <h3 class="panel-title">Clientes</h3>
+                        <h3 class="panel-title">Cadastro de Profissional</h3>
                     </div>
 
                     <table class="table table-bordered table-striped table-hover">
@@ -79,13 +79,6 @@
                         </tr>
 
                     </table>
-
-
-
-
-
-
-
 
                 </div><!--/row-->
 

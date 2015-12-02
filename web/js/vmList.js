@@ -1,8 +1,8 @@
 $(document).ready(function () {
     console.log('js carregado');
-    $('.linha-usuario-projeto').click(function () {
+    $('.linha-vm').click(function () {
         id = $(this).attr('id');
-        url = 'ServletController?cmd=platssa.model.command.LoadProject&id=' + id;
+        url = 'ServletController?cmd=platssa.model.command.LoadVmProjeto&idVm=' + id;
         window.location.href = url;
     });
 });

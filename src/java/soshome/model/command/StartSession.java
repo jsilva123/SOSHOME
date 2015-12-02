@@ -12,12 +12,11 @@ public class StartSession implements InterfaceCommand {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        
-        if(request.getSession().getAttribute("isProfissional").equals("true"))
-        {
-            return "ServletController?cmd=soshome.model.command.LoadPedidosProfissional&id="+request.getSession().getAttribute("id");
+
+        if (request.getSession().getAttribute("isProfissional").equals("true")) {
+            return "ServletController?cmd=soshome.model.command.LoadPedidosProfissional&id=" + request.getSession().getAttribute("id");
         }
-          return "ServletController?cmd=soshome.model.command.LoadPedidosCliente&id="+request.getSession().getAttribute("id");
+        return "ServletController?cmd=soshome.model.command.LoadPedidosCliente&id=" + request.getSession().getAttribute("id");
     }
 
 }

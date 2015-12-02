@@ -20,8 +20,8 @@ import soshome.util.Constants;
  *
  * @author Jorge
  */
-public class ConfirmPedidoServicoProfissional implements InterfaceCommand{
-      
+public class ConfirmPedidoServicoProfissional implements InterfaceCommand {
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("idPedido"));

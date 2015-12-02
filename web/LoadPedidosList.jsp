@@ -14,66 +14,66 @@
     <body>
         <div class="wrapper box row row-offcanvas row-offcanvas-left">
             <%@include file='sidebar.jsp'%>
-             <c:if test="${pageContext.session.getAttribute('isCliente').equals('true')}">
-            <ul class="nav navbar-nav">
-                <li id="aba-criado" class="aba active">
-                    <a href="#pane-criado" role="tab" data-toggle="tab">Pedidos Esperando Resposta</a>
-                </li>
+            <c:if test="${pageContext.session.getAttribute('isCliente').equals('true')}">
+                <ul class="nav navbar-nav">
+                    <li id="aba-criado" class="aba active">
+                        <a href="#pane-criado" role="tab" data-toggle="tab">Pedidos Esperando Resposta</a>
+                    </li>
 
-                <li id="aba-respondida" class="aba">
-                    <a href="#pane-respondida" role="tab" data-toggle="tab">Pedidos Respondidos
-                    </a>
-                </li>
-                
-                 <li id="aba-aceito" class="aba">
-                    <a href="#pane-aceito" role="tab" data-toggle="tab">Pedidos Esperando Confirma&ccedil;&atilde;o
-                    </a>
-                </li>
-                
-                <li id="aba-confirmado" class="aba">
-                    <a href="#pane-confirmado" role="tab" data-toggle="tab">Pedidos Confirmados
-                    </a>
-                </li>
-                
-                
-                 <li id="aba-finalizado" class="aba">
-                    <a href="#pane-finalizado" role="tab" data-toggle="tab">Pedidos Finalizados
-                    </a>
-                </li>
-            </ul>
+                    <li id="aba-respondida" class="aba">
+                        <a href="#pane-respondida" role="tab" data-toggle="tab">Pedidos Respondidos
+                        </a>
+                    </li>
 
-            <%@include file='upperbar-right.jsp'%> 
+                    <li id="aba-aceito" class="aba">
+                        <a href="#pane-aceito" role="tab" data-toggle="tab">Pedidos Esperando Confirma&ccedil;&atilde;o
+                        </a>
+                    </li>
+
+                    <li id="aba-confirmado" class="aba">
+                        <a href="#pane-confirmado" role="tab" data-toggle="tab">Pedidos Confirmados
+                        </a>
+                    </li>
+
+
+                    <li id="aba-finalizado" class="aba">
+                        <a href="#pane-finalizado" role="tab" data-toggle="tab">Pedidos Finalizados
+                        </a>
+                    </li>
+                </ul>
+
+                <%@include file='upperbar-right.jsp'%> 
             </c:if>
- <c:if test="${pageContext.session.getAttribute('isProfissional').equals('true')}">
-            <ul class="nav navbar-nav">
-                <li id="aba-criado" class="aba active">
-                    <a href="#pane-criado" role="tab" data-toggle="tab">Pedidos Abertos</a>
-                </li>
+            <c:if test="${pageContext.session.getAttribute('isProfissional').equals('true')}">
+                <ul class="nav navbar-nav">
+                    <li id="aba-criado" class="aba active">
+                        <a href="#pane-criado" role="tab" data-toggle="tab">Pedidos Abertos</a>
+                    </li>
 
-                <li id="aba-respondida" class="aba">
-                    <a href="#pane-respondida" role="tab" data-toggle="tab">Pedidos Respondidos
-                    </a>
-                </li>
-                
-                 <li id="aba-aceito" class="aba">
-                    <a href="#pane-aceito" role="tab" data-toggle="tab">Pedidos Aceitos
-                    </a>
-                </li>
-                
-                <li id="aba-confirmado" class="aba">
-                    <a href="#pane-confirmado" role="tab" data-toggle="tab">Pedidos Confirmados
-                    </a>
-                </li>
-                
-                 <li id="aba-finalizado" class="aba">
-                    <a href="#pane-finalizado" role="tab" data-toggle="tab">Pedidos Finalizados
-                    </a>
-                </li>
-            </ul>
+                    <li id="aba-respondida" class="aba">
+                        <a href="#pane-respondida" role="tab" data-toggle="tab">Pedidos Respondidos
+                        </a>
+                    </li>
 
-            <%@include file='upperbar-right.jsp'%> 
+                    <li id="aba-aceito" class="aba">
+                        <a href="#pane-aceito" role="tab" data-toggle="tab">Pedidos Aceitos
+                        </a>
+                    </li>
+
+                    <li id="aba-confirmado" class="aba">
+                        <a href="#pane-confirmado" role="tab" data-toggle="tab">Pedidos Confirmados
+                        </a>
+                    </li>
+
+                    <li id="aba-finalizado" class="aba">
+                        <a href="#pane-finalizado" role="tab" data-toggle="tab">Pedidos Finalizados
+                        </a>
+                    </li>
+                </ul>
+
+                <%@include file='upperbar-right.jsp'%> 
             </c:if>
-             
+
         </nav>
     </div><!-- /top nav -->
     <c:if test="${pageContext.session.getAttribute('isCliente').equals('true')}">
@@ -132,7 +132,7 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="tab-pane"  id="pane-confirmado">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -157,7 +157,7 @@
                         </div>
                     </div>
 
-                     <div class="tab-pane"  id="pane-aceito">
+                    <div class="tab-pane"  id="pane-aceito">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 Confirmados
@@ -180,7 +180,7 @@
                             </table>
                         </div>
                     </div>
-                     <div class="tab-pane"  id="pane-finalizado">
+                    <div class="tab-pane"  id="pane-finalizado">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 Confirmados
@@ -266,13 +266,13 @@
                                 </c:forEach>
                             </table>
                         </div>
-                        </div>
-                             
-                        <div class="tab-pane"  id="pane-confirmado">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Respondidas
-                                </div>
+                    </div>
+
+                    <div class="tab-pane"  id="pane-confirmado">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Respondidas
+                            </div>
 
                             <table class="table table-bordered table-striped table-hover">
                                 <tr>
@@ -291,12 +291,12 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="tab-pane"  id="pane-aceito">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Aceitos
-                                </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Aceitos
+                            </div>
 
                             <table class="table table-bordered table-striped table-hover">
                                 <tr>
@@ -315,12 +315,12 @@
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="tab-pane"  id="pane-finalizado">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Finalizados
-                                </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Finalizados
+                            </div>
 
                             <table class="table table-bordered table-striped table-hover">
                                 <tr>
@@ -356,6 +356,6 @@
 <script src="js/vendor/bootstrap.min.js"></script> 
 <script src="js/vendor/moment.min.js"></script> 
 <script src="js/main.js"></script> 
-<script src="js/projetoList.js"></script>
+<script src="js/pedidoList.js"></script>
 </body>
 </html>

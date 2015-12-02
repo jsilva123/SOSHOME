@@ -11,7 +11,7 @@
     </ul>
 
     <ul class="nav hidden-xs" id="lg-menu">
-      
+
         <c:if test="${pageContext.session.getAttribute('isCliente').equals('true')}">
             <li>
                 <a class="side-menu-title" href="CreatePedido.jsp"><i class="glyphicon glyphicons-plus"></i> Criar Pedido</a>
@@ -22,20 +22,20 @@
             <li>
                 <a class="side-menu-title" href="ServletController?cmd=soshome.model.command.GenerateReport"><i class="glyphicon glyphicon-stats"></i> Gerar Relatório</a>
             </li>
-            
+
         </c:if>
-            <c:if test="${pageContext.session.getAttribute('nome').equals('Admin')}">
-                <li>
-                <a class="side-menu-title" href="ServletController?cmd=soshome.model.command.CreateProfissional}"><i class="glyphicon glyphicon-stats"></i> Pedidos</a>
+        <c:if test="${pageContext.session.getAttribute('nomeCliente').equals('Admin')}">
+            <li>
+                <a class="side-menu-title" href="CreateProfissional.jsp"><i class="glyphicon glyphicon-stats"></i> Criar Profissional</a>
             </li>
-            </c:if>
-            
+        </c:if>
+
         <c:if test="${pageContext.session.getAttribute('isProfissional').equals('true')}">
             <li>
                 <a class="side-menu-title" href="ServletController?cmd=soshome.model.command.LoadPedidosProfissional&id='${pageContext.session.getAttribute('id')}'"><i class="glyphicon glyphicon-stats"></i> Pedidos</a>
             </li>
         </c:if>
-       
+
 
 
 

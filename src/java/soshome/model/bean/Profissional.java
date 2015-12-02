@@ -63,15 +63,12 @@ public class Profissional implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "profissional")
     private List<Servicoprestado> servicoprestadoList;
 
-  
     public Profissional() {
     }
 
     public Profissional(Integer idprofissional) {
         this.idprofissional = idprofissional;
     }
-
-  
 
     public Profissional(Integer idprofissional, String nome, String cpf, String telefone) {
         this.idprofissional = idprofissional;
@@ -171,7 +168,5 @@ public class Profissional implements Serializable {
     public String toString() {
         return "soshome.model.bean.Profissional[ idprofissional=" + idprofissional + " ]";
     }
-
-
 
 }

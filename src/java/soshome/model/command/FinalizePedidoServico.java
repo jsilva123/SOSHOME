@@ -20,8 +20,8 @@ import soshome.util.Constants;
  *
  * @author Jorge
  */
-public class FinalizePedidoServico implements InterfaceCommand{
-    
+public class FinalizePedidoServico implements InterfaceCommand {
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -29,8 +29,9 @@ public class FinalizePedidoServico implements InterfaceCommand{
         EntityManagerFactory factory = ConnectionFactory.getEntityManagerFactory();
         PedidoservicoJpaController pedidoDao = new PedidoservicoJpaController(factory);
         Pedidoservico pedido = pedidoDao.findPedidoservico(id);
-        if(!request.getParameter("nota").equals(""))
-        pedido.setAvaliacao(Integer.parseInt(request.getParameter("nota")));
+        if (!request.getParameter("nota").equals("")) {
+            pedido.setAvaliacao(Integer.parseInt(request.getParameter("nota")));
+        }
         pedido.setStatus(Constants.STATUS_PEDIDO_FINALIZADO);
 
         try {

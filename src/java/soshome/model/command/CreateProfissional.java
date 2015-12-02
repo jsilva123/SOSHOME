@@ -8,7 +8,6 @@ package soshome.model.command;
 import javax.persistence.EntityManagerFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import soshome.dao.ClienteJpaController;
 import soshome.dao.ProfissionalJpaController;
 import soshome.model.bean.Profissional;
 import soshome.model.connection.ConnectionFactory;
@@ -17,8 +16,8 @@ import soshome.model.connection.ConnectionFactory;
  *
  * @author Jorge
  */
-public class CreateProfissional implements InterfaceCommand{
-    
+public class CreateProfissional implements InterfaceCommand {
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
 

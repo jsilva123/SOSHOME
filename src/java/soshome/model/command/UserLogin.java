@@ -14,7 +14,6 @@ import soshome.dao.ProfissionalJpaController;
 import soshome.model.bean.Cliente;
 import soshome.model.bean.Profissional;
 
-
 public class UserLogin implements InterfaceCommand {
 
     private ClienteJpaController clienteDao;
@@ -62,7 +61,7 @@ public class UserLogin implements InterfaceCommand {
             isCliente = "true";
             isProfissional = "false";
             request.getSession().setAttribute("id", cliente.getIdcliente());
-            request.getSession().setAttribute("nomeCliente",cliente.getNome());
+            request.getSession().setAttribute("nomeCliente", cliente.getNome());
         } else {
             request.getSession().setAttribute("user", profissional);
             isCliente = "false";

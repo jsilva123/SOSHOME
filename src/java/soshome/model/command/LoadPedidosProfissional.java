@@ -26,7 +26,7 @@ public class LoadPedidosProfissional implements InterfaceCommand {
         EntityManagerFactory factory = ConnectionFactory.getEntityManagerFactory();
         PedidoservicoJpaController pedidosDao = new PedidoservicoJpaController(factory);
         ProfissionalJpaController profissionalDao = new ProfissionalJpaController(factory);
-       
+
         List<Pedidoservico> pedidosCriados = pedidosDao.findCriados();
         List<Pedidoservico> pedidosRespondidos = pedidosDao.findByStatusProfissional(Constants.STATUS_PEDIDO_RESPONDIDO, profissionalDao.findProfissional(Integer.parseInt(request.getParameter("id").replaceAll("'", ""))));
         List<Pedidoservico> pedidosAceitos = pedidosDao.findByStatusProfissional(Constants.STATUS_PEDIDO_ACEITO, profissionalDao.findProfissional(Integer.parseInt(request.getParameter("id").replaceAll("'", ""))));
@@ -38,7 +38,6 @@ public class LoadPedidosProfissional implements InterfaceCommand {
         request.setAttribute("pedidosAceitos", pedidosAceitos);
         request.setAttribute("pedidosConfirmados", pedidosConfirmados);
         request.setAttribute("pedidosFinalizados", pedidosFinalizados);
-        
 
         return "LoadPedidosList.jsp";
     }

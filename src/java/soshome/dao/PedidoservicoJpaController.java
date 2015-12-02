@@ -276,7 +276,19 @@ public class PedidoservicoJpaController implements Serializable {
 
         return null;
     }
+    
+   public int findCountTiposervico(Tiposervico idTiposervico) {
 
+        EntityManager em = getEntityManager();
+        Query query = em.createNamedQuery("Pedidoservico.findCountTipoServico");
+        query.setParameter("idTiposervico", idTiposervico);
+        try {
+            return (int)query.getSingleResult();
+        } catch (NoResultException nre) {
+        }
+
+        return 0;
+    }
     public List<Pedidoservico> findByStatusProfissional(String status, Profissional idprofissional) {
 
         EntityManager em = getEntityManager();

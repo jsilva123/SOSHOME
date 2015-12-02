@@ -73,14 +73,13 @@ public class GenerateReport implements InterfaceCommand {
                                         count++;
                                     }
                                 }
-                                if (k == p.size()-1) {
+                                if (k == p.size() - 1) {
                                     lista.add(new ListaMedias(p.get(i).getIdprofissional().getIdprofissional(), media / count));
                                 }
                             }
                         }
                     }
-                } 
-                else {
+                } else {
                     for (int k = 0; k < p.size(); k++) {
                         if (p.get(k).getStatus().equals(Constants.STATUS_PEDIDO_FINALIZADO)) {
                             if (p.get(i).getIdprofissional().getIdprofissional() == p.get(k).getIdprofissional().getIdprofissional()) {
@@ -88,15 +87,15 @@ public class GenerateReport implements InterfaceCommand {
                                 count++;
                             }
                         }
-                        if (k == p.size()-1) {
+                        if (k == p.size() - 1) {
                             lista.add(new ListaMedias(p.get(i).getIdprofissional().getIdprofissional(), media / count));
                         }
                     }
                 }
-            
-    }
-}
-List models = new ArrayList();
+
+            }
+        }
+        List models = new ArrayList();
         for (int i = 0; i < p.size(); i++) {
             if (null != p.get(i).getIdprofissional()) {
                 for (int j = 0; j < lista.size(); j++) {
@@ -112,34 +111,28 @@ List models = new ArrayList();
         JasperReport report = null;
         try {
             report = JasperCompileManager.compileReport(jasperTemplate);
-        
 
-} catch (JRException ex) {
+        } catch (JRException ex) {
             Logger.getLogger(GenerateReport.class
-.getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         JasperPrint print = null;
         try {
             print = JasperFillManager.fillReport(report, null, new JRBeanCollectionDataSource(models, false));
-        
 
-} catch (JRException ex) {
+        } catch (JRException ex) {
             Logger.getLogger(GenerateReport.class
-.getName()).log(Level.SEVERE, null, ex);
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
-
-String rs = RandomStringUtils.randomAlphanumeric(10);
+        String rs = RandomStringUtils.randomAlphanumeric(10);
         try {
-            JasperExportManager.exportReportToPdfFile(print, path + "\\" +  "Melhores Profissionais "+ rs+ ".pdf");
+            JasperExportManager.exportReportToPdfFile(print, path + "\\" + "Melhores Profissionais " + rs + ".pdf");
 
-        
-
-} catch (JRException ex) {
+        } catch (JRException ex) {
             Logger.getLogger(GenerateReport.class.getName()).log(Level.SEVERE, null, ex);
-        
 
-} catch (Exception ex) {
+        } catch (Exception ex) {
             Logger.getLogger(GenerateReport.class.getName()).log(Level.SEVERE, null, ex);
         }
         request.setAttribute("msg", true);
@@ -147,87 +140,85 @@ String rs = RandomStringUtils.randomAlphanumeric(10);
 
         return "ServletController?cmd=soshome.model.command.LoadPedidosCliente&id=" + request.getSession().getAttribute("id");
 
-    
-
-}
+    }
 
     public class ModeloRelatorio {
 
-    String nome;
-    String telefone;
-    String endereco;
-    BigDecimal avg;
+        String nome;
+        String telefone;
+        String endereco;
+        BigDecimal avg;
 
-    public ModeloRelatorio(String nome, String telefone, String endereco, BigDecimal avg) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.avg = avg;
+        public ModeloRelatorio(String nome, String telefone, String endereco, BigDecimal avg) {
+            this.nome = nome;
+            this.telefone = telefone;
+            this.endereco = endereco;
+            this.avg = avg;
+
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        public String getTelefone() {
+            return telefone;
+        }
+
+        public void setTelefone(String telefone) {
+            this.telefone = telefone;
+        }
+
+        public String getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(String endereco) {
+            this.endereco = endereco;
+        }
+
+        public BigDecimal getAvg() {
+            return avg;
+
+        }
+
+        public void setAvg(BigDecimal avg) {
+            this.avg = avg;
+
+        }
 
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public class ListaMedias {
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+        private int id;
+        private double media;
 
-    public String getTelefone() {
-        return telefone;
-    }
+        public ListaMedias(int id, double media) {
+            this.id = id;
+            this.media = media;
+        }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+        public int getId() {
+            return id;
+        }
 
-    public String getEndereco() {
-        return endereco;
-    }
+        public void setId(int id) {
+            this.id = id;
+        }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+        public double getMedia() {
+            return media;
+        }
 
-    public BigDecimal getAvg() {
-        return avg;
-
-    }
-
-    public void setAvg(BigDecimal avg) {
-        this.avg = avg;
+        public void setMedia(double media) {
+            this.media = media;
+        }
 
     }
-
-}
-
-public class ListaMedias {
-
-    private int id;
-    private double media;
-
-    public ListaMedias(int id, double media) {
-        this.id = id;
-        this.media = media;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getMedia() {
-        return media;
-    }
-
-    public void setMedia(double media) {
-        this.media = media;
-    }
-
-}
 
 }

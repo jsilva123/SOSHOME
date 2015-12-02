@@ -29,7 +29,7 @@ public class LoadPedidosCliente implements InterfaceCommand {
         ClienteJpaController clienteDao = new ClienteJpaController(factory);
 
         String test = request.getParameter("id");
-        
+
         List<Pedidoservico> pedidosCriados = pedidosDao.findByStatusCliente(Constants.STATUS_PEDIDO_CRIADO, clienteDao.findCliente(Integer.parseInt(request.getParameter("id").replaceAll("'", ""))));
         List<Pedidoservico> pedidosRespondidos = pedidosDao.findByStatusCliente(Constants.STATUS_PEDIDO_RESPONDIDO, clienteDao.findCliente(Integer.parseInt(request.getParameter("id").replaceAll("'", ""))));
         List<Pedidoservico> pedidosConfirmados = pedidosDao.findByStatusCliente(Constants.STATUS_PEDIDO_CONFIRMADO, clienteDao.findCliente(Integer.parseInt(request.getParameter("id").replaceAll("'", ""))));
