@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Pedidoservico.findByStatus", query = "SELECT p FROM Pedidoservico p WHERE p.status = :status"),
     @NamedQuery(name = "Pedidoservico.findByStatusCliente", query = "SELECT p FROM Pedidoservico p WHERE p.status = :status and p.idcliente = :idcliente"),
     @NamedQuery(name = "Pedidoservico.findByStatusProfissional", query = "SELECT p FROM Pedidoservico p WHERE p.status = :status and p.idprofissional = :idprofissional"),
-    @NamedQuery(name = "Pedidoservico.findCountTipoServico", query = "SELECT COUNT(p.idtiposervico) FROM Pedidoservico p WHERE p.idpedido = :idpedido GROUP BY p.idtiposervico"),
+    @NamedQuery(name = "Pedidoservico.findCountTipoServico", query = "SELECT COUNT(p.idtiposervico) FROM Pedidoservico p WHERE p.idtiposervico = :idtiposervico GROUP BY p.idtiposervico"),
 
     @NamedQuery(name = "Pedidoservico.findByDatasolicitacao", query = "SELECT p FROM Pedidoservico p WHERE p.datasolicitacao = :datasolicitacao"),
     @NamedQuery(name = "Pedidoservico.findByDataexecucao", query = "SELECT p FROM Pedidoservico p WHERE p.dataexecucao = :dataexecucao"),

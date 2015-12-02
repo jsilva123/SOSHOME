@@ -52,7 +52,7 @@
 
         <div class="footer">
             <div class="container">
-
+                <img src="img/logo.png" alt="Logomarca da SOS_HOME" height="200px" class="footer-images">
             </div>
         </div>
 

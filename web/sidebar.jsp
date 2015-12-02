@@ -28,6 +28,9 @@
             <li>
                 <a class="side-menu-title" href="CreateProfissional.jsp"><i class="glyphicon glyphicon-stats"></i> Criar Profissional</a>
             </li>
+             <li>
+                 <a class="side-menu-title" href="ServletController?cmd=soshome.model.command.GenerateTipoServicoQtd"><i class="glyphicon glyphicon-stats"></i> Rel. de Tipos de Servi&ccedil;o</a>
+            </li>
         </c:if>
 
         <c:if test="${pageContext.session.getAttribute('isProfissional').equals('true')}">
